@@ -17,11 +17,23 @@
  * sellPrice = price[sellDay] = 6
  * 
  * profit = sellPrice - buyPrice = 6 - 1 = 5 
- * This is the maximum proffit
+ * This is the maximum profit
  * 
  * buyDay < sellDay
  */
 
 var maxProfit = function(prices){
-
+    let minBuyPrice = prices[0]; //initial buy price
+    let maxProfit = 0; //initial profit made
+    for (i = 1; i < prices.length; i++) //i must start at one because you must buy before selling
+    {
+        let sellPrice = prices[i]; //sellPrice equals value of prices[i] 
+        let profit = sellPrice - minBuyPrice; 
+        maxProfit = Math.max(maxProfit, profit) //compare profits
+        minBuyPrice = Math.min(minBuyPrice, prices[i])//compare which is price is lower
+    }
+    return maxProfit
 };
+
+// Time complexity: linear, only running one for loop
+// Space complexity: constant, not creating a new array 
