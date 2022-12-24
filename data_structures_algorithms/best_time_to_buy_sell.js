@@ -36,4 +36,4 @@ var maxProfit = function(prices){
 };
 
 // Time complexity: linear, only running one for loop
-// Space complexity: constant, not creating a new array 
+// Space complexity: constant, not creating a new array, save space 
